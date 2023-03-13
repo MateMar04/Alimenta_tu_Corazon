@@ -1,0 +1,104 @@
+@startuml diagram
+
+class Beneficiados {
+    -nombre
+    -apellido
+    -edad
+    -sexo
+    -nacionalidad
+    -situacion_laboral
+    -nro_hijos
+    -ingresos
+    -domicilio
+    -nivel_pobreza
+    -estado_salud
+    -situacion_familiar
+    -disponibilidad_recursos
+}
+
+class Voluntarios {
+    -id
+    -nombre
+    -apellido
+    -rol
+}
+
+class Donaciones {
+    -id
+    -nombre
+    -apellido
+    -fecha
+    -cantidad
+    -moneda
+}
+
+class Comidas {
+    -id
+    -nombre
+}
+
+class Talleres {
+    -id
+    -nombre
+    -descripcion
+}
+
+class Domicilios {
+    -id
+    -calle
+    -numero
+}
+
+class Situaciones_Laborales {
+    -id
+    -nombre
+    -descripcion
+}
+
+class Niveles_Pobreza {
+    -id
+    -nombre
+    -descripcion
+}
+
+class Estados_Salud {
+    -id
+    -nombre
+    -descripcion
+}
+
+class Situaciones_Familiares {
+    -id
+    -nombre
+    -descripcion
+}
+
+class Disponibilidades_Recursos {
+    -id
+    -nombre
+    -descripcion
+}
+
+class Roles {
+    -id
+    -nombre
+    -descripcion
+}
+
+class Monedas {
+    -id
+    -nombre
+    -descripcion
+}
+
+Voluntarios --> Roles
+Beneficiados --> Situaciones_Laborales
+Beneficiados --> Domicilios
+Beneficiados --> Niveles_Pobreza
+Beneficiados --> Estados_Salud
+Beneficiados --> Situaciones_Familiares
+Beneficiados --> Disponibilidades_Recursos
+Beneficiados --> Comidas
+Comidas --> Voluntarios
+Donaciones --> Monedas
+Beneficiados --> Talleres
