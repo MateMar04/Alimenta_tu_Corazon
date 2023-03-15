@@ -1,94 +1,203 @@
 @startuml diagram
 
 class Beneficiados {
-    -nombre
-    -apellido
-    -edad
-    -sexo
-    -nacionalidad
-    -situacion_laboral
-    -nro_hijos
-    -ingresos
-    -domicilio
-    -nivel_pobreza
-    -estado_salud
-    -situacion_familiar
-    -disponibilidad_recursos
+    -id : int
+    -nombre : str
+    -apellido : str
+    -edad : int
+    -sexo : Sexo
+    -nacionalidad : Nacionalidad
+    -situacion_laboral : Situacion_Laboral
+    -nro_hijos : int
+    -ingresos : int
+    -domicilio : Domilio
+    -nivel_pobreza : Nivel_Pobreza
+    -estado_salud : Estado_Salud
+    -situacion_familiar : Situacion_Familiar
+    -disponibilidad_recursos : Disponibilidad_Recursos
+    --
+    +get_id()
+    +get_nombre()
+    +get_apellido()
+    +get_edad()
+    +get_sexo()
+    +get_nacionalidad()
+    +get_situacion_laboral()
+    +get_nro_hijos()
+    +get_ingresos()
+    +get_domicilio()
+    +get_nivel_pobreza()
+    +get_estado_salud()
+    +get_situacion_familiar()
+    +get_disponibilidad_recursos()
+}
+
+class Nacionalidades {
+    -id : int
+    -nombre : str
+    -descripcion : str
+    --
+    +get_id()
+    +get_nombre()
+    +get_descripcion()
+}
+
+class Sexos {
+    -id : int
+    -nombre : str
+    -descripcion : str
+    --
+    +get_id()
+    +get_nombre()
+    +get_descripcion()
 }
 
 class Voluntarios {
-    -id
-    -nombre
-    -apellido
-    -rol
+    -id : int
+    -nombre : str
+    -apellido : str
+    -rol : Rol
+    --
+    +get_id()
+    +get_nombre()
+    +get_apellido()
+    +get_rol()
 }
 
 class Donaciones {
-    -id
-    -nombre
-    -apellido
-    -fecha
-    -cantidad
-    -moneda
+    -id : int
+    -nombre : str
+    -apellido : str
+    -fecha : date
+    -cantidad : int
+    -moneda : Moneda
+    --
+    +get_id()
+    +get_nombre()
+    +get_apellido()
+    +get_fecha()
+    +get_cantidad()
+    +get_moneda()
 }
 
-class Comidas {
-    -id
-    -nombre
+class Menues {
+    -id : int
+    -nombre : str
+    --
+    +get_id()
+    +get_nombre()
+}
+
+class Ingredientes {
+    -id : int
+    -nombre : str
+    -menu : Menu
+    --
+    +get_id()
+    +get_nombre()
+    +get_menu()
 }
 
 class Talleres {
-    -id
-    -nombre
-    -descripcion
+    -id : int
+    -nombre : str
+    -descripcion : str
+    --
+    +get_id()
+    +get_nombre()
+    +get_descripcion()
 }
 
 class Domicilios {
-    -id
-    -calle
-    -numero
+    -id : int
+    -calle : str
+    -numero : int
+    --
+    +get_id()
+    +get_calle()
+    +get_numero()
 }
 
 class Situaciones_Laborales {
-    -id
-    -nombre
-    -descripcion
+    -id : int
+    -nombre : str
+    -descripcion : str
+    --
+    +get_id()
+    +get_nombre()
+    +get_descripcion()
 }
 
 class Niveles_Pobreza {
-    -id
-    -nombre
-    -descripcion
+    -id : int
+    -nombre : str
+    -descripcion : str
+    --
+    +get_id()
+    +get_nombre()
+    +get_descripcion()
 }
 
 class Estados_Salud {
-    -id
-    -nombre
-    -descripcion
+    -id : int
+    -nombre : str
+    -descripcion : str
+    --
+    +get_id()
+    +get_nombre()
+    +get_descripcion()
 }
 
 class Situaciones_Familiares {
-    -id
-    -nombre
-    -descripcion
+    -id : int
+    -nombre : str
+    -descripcion : str
+    --
+    +get_id()
+    +get_nombre()
+    +get_descripcion()
 }
 
 class Disponibilidades_Recursos {
-    -id
-    -nombre
-    -descripcion
+    -id : int
+    -nombre : str
+    -descripcion : str
+    --
+    +get_id()
+    +get_nombre()
+    +get_descripcion()
 }
 
 class Roles {
-    -id
-    -nombre
-    -descripcion
+    -id : int
+    -nombre : str
+    -descripcion : str
+    --
+    +get_id()
+    +get_nombre()
+    +get_descripcion()
 }
 
 class Monedas {
-    -id
-    -nombre
-    -descripcion
+    -id : int
+    -nombre : str
+    -descripcion : str
+    --
+    +get_id()
+    +get_nombre()
+    +get_descripcion()
+}
+
+class Comidas {
+    -id : int
+    -nombre : str
+    -descripcion : str
+    -ingredientes : Ingredientes
+    --
+    +get_id()
+    +get_nombre()
+    +get_descripcion()
+    +get_ingredientes()
 }
 
 Voluntarios --> Roles
@@ -98,7 +207,10 @@ Beneficiados --> Niveles_Pobreza
 Beneficiados --> Estados_Salud
 Beneficiados --> Situaciones_Familiares
 Beneficiados --> Disponibilidades_Recursos
-Beneficiados --> Comidas
+Beneficiados --> Menues
+Menues --> Ingredientes
 Comidas --> Voluntarios
 Donaciones --> Monedas
 Beneficiados --> Talleres
+Beneficiados --> Sexos
+Beneficiados --> Nacionalidades
