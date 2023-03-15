@@ -82,10 +82,14 @@ class Donaciones {
 
 class Menues {
     -id : int
-    -nombre : str
+    -nombre : str    
+    -descripcion : str
+    -ingredientes : Ingredientes
     --
     +get_id()
     +get_nombre()
+    +get_descripcion()
+    +get_ingredientes()
 }
 
 class Ingredientes {
@@ -188,17 +192,7 @@ class Monedas {
     +get_descripcion()
 }
 
-class Comidas {
-    -id : int
-    -nombre : str
-    -descripcion : str
-    -ingredientes : Ingredientes
-    --
-    +get_id()
-    +get_nombre()
-    +get_descripcion()
-    +get_ingredientes()
-}
+
 
 Voluntarios --> Roles
 Beneficiados --> Situaciones_Laborales
@@ -209,7 +203,7 @@ Beneficiados --> Situaciones_Familiares
 Beneficiados --> Disponibilidades_Recursos
 Beneficiados --> Menues
 Menues --> Ingredientes
-Comidas --> Voluntarios
+Menues --> Voluntarios
 Donaciones --> Monedas
 Beneficiados --> Talleres
 Beneficiados --> Sexos
