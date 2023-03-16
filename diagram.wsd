@@ -192,6 +192,16 @@ class Monedas {
     +get_descripcion()
 }
 
+class Asistencias {
+    -id : int
+    -dia : date
+    -beneficiado : Beneficiado
+    --
+    +get_id()
+    +get_dia()
+    +get_beneficiado()
+}
+
 
 
 Voluntarios --> Roles
@@ -202,9 +212,10 @@ Beneficiados --> Estados_Salud
 Beneficiados --> Situaciones_Familiares
 Beneficiados --> Disponibilidades_Recursos
 Beneficiados --> Menues
-Menues --> Ingredientes
-Menues --> Voluntarios
-Donaciones --> Monedas
 Beneficiados --> Talleres
 Beneficiados --> Sexos
 Beneficiados --> Nacionalidades
+Beneficiados --> Asistencias
+Menues --> Ingredientes
+Menues --> Voluntarios
+Donaciones --> Monedas
