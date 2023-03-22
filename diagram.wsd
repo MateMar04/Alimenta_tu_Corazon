@@ -69,15 +69,15 @@ class Donaciones {
     -nombre : str
     -apellido : str
     -fecha : date
+    -ingrediente : Ingrediente
     -cantidad : int
-    -moneda : Moneda
     --
     +get_id()
     +get_nombre()
     +get_apellido()
     +get_fecha()
+    +get_ingrediente()
     +get_cantidad()
-    +get_moneda()
 }
 
 class Menues {
@@ -96,10 +96,12 @@ class Ingredientes {
     -id : int
     -nombre : str
     -menu : Menu
+    -stock : int
     --
     +get_id()
     +get_nombre()
     +get_menu()
+    +get_stock()
 }
 
 class Talleres {
@@ -182,16 +184,6 @@ class Roles {
     +get_descripcion()
 }
 
-class Monedas {
-    -id : int
-    -nombre : str
-    -descripcion : str
-    --
-    +get_id()
-    +get_nombre()
-    +get_descripcion()
-}
-
 class Asistencias {
     -id : int
     -dia : date
@@ -218,4 +210,4 @@ Beneficiados --> Nacionalidades
 Beneficiados --> Asistencias
 Menues --> Ingredientes
 Menues --> Voluntarios
-Donaciones --> Monedas
+Ingredientes --> Donaciones
