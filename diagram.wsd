@@ -66,21 +66,19 @@ class Voluntarios {
 
 class Donaciones {
     -id : int
-    -nombre : str
-    -apellido : str
     -fecha : date
+    -donante : Donante
     -ingrediente : Ingrediente
     -cantidad : int
     --
     +get_id()
-    +get_nombre()
-    +get_apellido()
     +get_fecha()
+    +get_donante()
     +get_ingrediente()
     +get_cantidad()
 }
 
-class Menues {
+class Comidas {
     -id : int
     -nombre : str    
     -descripcion : str
@@ -97,11 +95,13 @@ class Ingredientes {
     -nombre : str
     -menu : Menu
     -stock : int
+    -tipo_ingrediente : Tipo_de_Ingrediente
     --
     +get_id()
     +get_nombre()
     +get_menu()
     +get_stock()
+    +get_tipo_ingrediente()
 }
 
 class Talleres {
@@ -194,6 +194,23 @@ class Asistencias {
     +get_beneficiado()
 }
 
+class Donantes {
+    -id : int
+    -nombre : str
+    -apellido : str
+    --
+    +get_id()
+    +get_nombre()
+    +get_apellido()
+}
+
+class Tipos_de_Ingredientes {
+    -id : int
+    -nombre : str
+    --
+    +get_id()
+    +get_nombre()
+}
 
 
 Voluntarios --> Roles
@@ -203,11 +220,13 @@ Beneficiados --> Niveles_Pobreza
 Beneficiados --> Estados_Salud
 Beneficiados --> Situaciones_Familiares
 Beneficiados --> Disponibilidades_Recursos
-Beneficiados --> Menues
+Beneficiados --> Comidas
 Beneficiados --> Talleres
 Beneficiados --> Sexos
 Beneficiados --> Nacionalidades
 Beneficiados --> Asistencias
-Menues --> Ingredientes
-Menues --> Voluntarios
+Comidas --> Ingredientes
+Comidas --> Voluntarios
 Ingredientes --> Donaciones
+Donaciones <-- Donantes 
+Ingredientes --> Tipos_de_Ingredientes
