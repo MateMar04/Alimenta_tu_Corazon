@@ -16,20 +16,8 @@ class Beneficiados {
     -situacion_familiar : Situacion_Familiar
     -disponibilidad_recursos : Disponibilidad_Recursos
     --
-    +get_id()
-    +get_nombre()
-    +get_apellido()
-    +get_edad()
-    +get_sexo()
-    +get_nacionalidad()
-    +get_situacion_laboral()
-    +get_nro_hijos()
-    +get_ingresos()
-    +get_domicilio()
-    +get_nivel_pobreza()
-    +get_estado_salud()
-    +get_situacion_familiar()
-    +get_disponibilidad_recursos()
+    +get_...()
+    +set_...()
 }
 
 class Nacionalidades {
@@ -37,9 +25,8 @@ class Nacionalidades {
     -nombre : str
     -descripcion : str
     --
-    +get_id()
-    +get_nombre()
-    +get_descripcion()
+    +get_...()
+    +set_...()
 }
 
 class Sexos {
@@ -47,9 +34,8 @@ class Sexos {
     -nombre : str
     -descripcion : str
     --
-    +get_id()
-    +get_nombre()
-    +get_descripcion()
+    +get_...()
+    +set_...()
 }
 
 class Voluntarios {
@@ -58,10 +44,8 @@ class Voluntarios {
     -apellido : str
     -rol : Rol
     --
-    +get_id()
-    +get_nombre()
-    +get_apellido()
-    +get_rol()
+    +get_...()
+    +set_...()
 }
 
 class Donaciones {
@@ -71,11 +55,8 @@ class Donaciones {
     -ingrediente : Ingrediente
     -cantidad : int
     --
-    +get_id()
-    +get_fecha()
-    +get_donante()
-    +get_ingrediente()
-    +get_cantidad()
+    +get_...()
+    +set_...()
 }
 
 class Comidas {
@@ -84,10 +65,10 @@ class Comidas {
     -descripcion : str
     -ingredientes : Ingredientes
     --
-    +get_id()
-    +get_nombre()
-    +get_descripcion()
-    +get_ingredientes()
+    +get_...()
+    +set_...()
+    +get_total_de_comidas_entregadas()
+    +get_comidas_preparadas()
 }
 
 class Ingredientes {
@@ -97,11 +78,8 @@ class Ingredientes {
     -stock : int
     -tipo_ingrediente : Tipo_de_Ingrediente
     --
-    +get_id()
-    +get_nombre()
-    +get_menu()
-    +get_stock()
-    +get_tipo_ingrediente()
+    +get_...()
+    +set_...()
 }
 
 class Talleres {
@@ -109,9 +87,8 @@ class Talleres {
     -nombre : str
     -descripcion : str
     --
-    +get_id()
-    +get_nombre()
-    +get_descripcion()
+    +get_...()
+    +set_...()
 }
 
 class Domicilios {
@@ -119,9 +96,8 @@ class Domicilios {
     -calle : str
     -numero : int
     --
-    +get_id()
-    +get_calle()
-    +get_numero()
+    +get_...()
+    +set_...()
 }
 
 class Situaciones_Laborales {
@@ -129,9 +105,8 @@ class Situaciones_Laborales {
     -nombre : str
     -descripcion : str
     --
-    +get_id()
-    +get_nombre()
-    +get_descripcion()
+    +get_...()
+    +set_...()
 }
 
 class Niveles_Pobreza {
@@ -139,9 +114,8 @@ class Niveles_Pobreza {
     -nombre : str
     -descripcion : str
     --
-    +get_id()
-    +get_nombre()
-    +get_descripcion()
+    +get_...()
+    +set_...()
 }
 
 class Estados_Salud {
@@ -149,9 +123,8 @@ class Estados_Salud {
     -nombre : str
     -descripcion : str
     --
-    +get_id()
-    +get_nombre()
-    +get_descripcion()
+    +get_...()
+    +set_...()
 }
 
 class Situaciones_Familiares {
@@ -159,9 +132,8 @@ class Situaciones_Familiares {
     -nombre : str
     -descripcion : str
     --
-    +get_id()
-    +get_nombre()
-    +get_descripcion()
+    +get_...()
+    +set_...()
 }
 
 class Disponibilidades_Recursos {
@@ -169,9 +141,8 @@ class Disponibilidades_Recursos {
     -nombre : str
     -descripcion : str
     --
-    +get_id()
-    +get_nombre()
-    +get_descripcion()
+    +get_...()
+    +set_...()
 }
 
 class Roles {
@@ -179,9 +150,8 @@ class Roles {
     -nombre : str
     -descripcion : str
     --
-    +get_id()
-    +get_nombre()
-    +get_descripcion()
+    +get_...()
+    +set_...()
 }
 
 class Asistencias {
@@ -189,9 +159,8 @@ class Asistencias {
     -dia : date
     -beneficiado : Beneficiado
     --
-    +get_id()
-    +get_dia()
-    +get_beneficiado()
+    +get_...()
+    +set_...()
 }
 
 class Donantes {
@@ -199,17 +168,16 @@ class Donantes {
     -nombre : str
     -apellido : str
     --
-    +get_id()
-    +get_nombre()
-    +get_apellido()
+    +get_...()
+    +set_...()
 }
 
 class Tipos_de_Ingredientes {
     -id : int
     -nombre : str
     --
-    +get_id()
-    +get_nombre()
+    +get_...()
+    +set_...()
 }
 
 
